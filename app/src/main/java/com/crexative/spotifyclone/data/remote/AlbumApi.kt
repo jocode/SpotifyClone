@@ -1,6 +1,6 @@
 package com.crexative.spotifyclone.data.remote
 
-import com.crexative.spotifyclone.data.models.NewReleasesResponse
+import com.crexative.spotifyclone.data.models.albums.NewReleasesResponse
 import retrofit2.http.GET
 
 interface AlbumApi {

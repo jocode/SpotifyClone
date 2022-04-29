@@ -4,19 +4,24 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.AsyncListDiffer
 import androidx.recyclerview.widget.DiffUtil
-import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
-import com.crexative.spotifyclone.data.models.albums.Item
+import com.crexative.spotifyclone.core.BaseRecyclerAdapter
+import com.crexative.spotifyclone.core.BaseViewHolder
+import com.crexative.spotifyclone.data.models.search.Item
 import com.crexative.spotifyclone.databinding.AlbumItemBinding
 
-class AlbumsAdapter : RecyclerView.Adapter<AlbumsAdapter.AlbumHolder>() {
+class ArtistAdapter : BaseRecyclerAdapter<BaseViewHolder<Item>>() {
 
     private val diffCallback = object : DiffUtil.ItemCallback<Item>() {
         override fun areItemsTheSame(oldItem: Item, newItem: Item): Boolean =
             oldItem.id == newItem.id
 
         override fun areContentsTheSame(oldItem: Item, newItem: Item): Boolean =
-            oldItem.hashCode() == newItem.hashCode()
+            try {
+                oldItem.hashCode() == newItem.hashCode()
+            } catch (e: Exception) {
+                false
+            }
     }
 
     private val differ = AsyncListDiffer(this, diffCallback)
@@ -25,29 +30,28 @@ class AlbumsAdapter : RecyclerView.Adapter<AlbumsAdapter.AlbumHolder>() {
         get() = differ.currentList
         set(value) = differ.submitList(value)
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): AlbumHolder {
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): BaseViewHolder<Item> {
         val binding = AlbumItemBinding.inflate(LayoutInflater.from(parent.context), parent, false)
-        return AlbumHolder(binding)
+        return ArtistHolder(binding)
     }
 
-    override fun onBindViewHolder(holder: AlbumHolder, position: Int) {
+    override fun onBindViewHolder(holder: BaseViewHolder<Item>, position: Int) {
         holder.bind(items[position])
     }
 
     override fun getItemCount(): Int = items.size
 
-    inner class AlbumHolder(private val binding: AlbumItemBinding) :
-        RecyclerView.ViewHolder(binding.root) {
+    inner class ArtistHolder(private val binding: AlbumItemBinding) :
+        BaseViewHolder<Item>(binding.root) {
 
-        fun bind(item: Item) = with(binding) {
+        override fun bind(item: Item) = with(binding) {
 
             tvAlbumName.text = item.name
-            tvArtistName.text = item.artists.first().name
+            tvArtistName.text = item.genres.joinToString(" - ")
 
             Glide.with(root.context)
-                .load(item.images.first().url)
-                .fitCenter()
-                // .circleCrop()
+                .load(item.images.firstOrNull()?.url)
+                .circleCrop()
                 .into(imgAlbum)
 
             handleClick(item)

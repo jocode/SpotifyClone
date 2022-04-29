@@ -1,4 +1,4 @@
-package com.crexative.spotifyclone.data.models
+package com.crexative.spotifyclone.data.models.search
 
 
 import com.google.gson.annotations.SerializedName

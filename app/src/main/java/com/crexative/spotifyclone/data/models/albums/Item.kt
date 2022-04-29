@@ -1,5 +1,4 @@
-package com.crexative.spotifyclone.data.models
-
+package com.crexative.spotifyclone.data.models.albums
 
 import com.google.gson.annotations.SerializedName
 
@@ -10,7 +9,7 @@ data class Item(
     @SerializedName("available_markets")
     val availableMarkets: List<String>,
     @SerializedName("external_urls")
-    val externalUrls: ExternalUrlsX,
+    val externalUrls: ExternalUrls,
     val href: String,
     val id: String,
     val images: List<Image>,

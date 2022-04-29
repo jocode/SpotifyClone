@@ -1,7 +1,7 @@
 package com.crexative.spotifyclone.domain.usecases
 
 import com.crexative.spotifyclone.core.Resource
-import com.crexative.spotifyclone.data.models.NewReleasesResponse
+import com.crexative.spotifyclone.data.models.albums.NewReleasesResponse
 import com.crexative.spotifyclone.domain.repositories.AlbumRepository
 import javax.inject.Inject
 

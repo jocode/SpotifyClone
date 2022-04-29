@@ -1,7 +1,4 @@
-package com.crexative.spotifyclone.data.models
-
-
-import com.google.gson.annotations.SerializedName
+package com.crexative.spotifyclone.data.models.albums
 
 data class Albums(
     val href: String,
