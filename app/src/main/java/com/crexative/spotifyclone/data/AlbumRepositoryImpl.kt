@@ -1,7 +1,7 @@
 package com.crexative.spotifyclone.data
 
 import com.crexative.spotifyclone.core.Resource
-import com.crexative.spotifyclone.data.models.NewReleasesResponse
+import com.crexative.spotifyclone.data.models.albums.NewReleasesResponse
 import com.crexative.spotifyclone.data.remote.AlbumApi
 import com.crexative.spotifyclone.domain.repositories.AlbumRepository
 import retrofit2.HttpException
