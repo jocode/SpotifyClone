@@ -42,13 +42,18 @@ class MainActivity : AppCompatActivity() {
 
     private fun setupMainScreen() {
         AppPreferences.token?.let {
-            Log.e(TAG, "Token: $it")
-
-            try {
-                navController.navigate(R.id.action_loginFragment_to_homeScreenFragment)
-            } catch (e: Exception) {
-                e.printStackTrace()
+            Log.e(TAG, "setupMainScreen: Token $it")
+            if (it.isNotEmpty()) {
+                navigateMainFragment()
             }
+        }
+    }
+
+    private fun navigateMainFragment() {
+        try {
+            navController.navigate(R.id.action_loginFragment_to_homeScreenFragment)
+        } catch (e: Exception) {
+            e.printStackTrace()
         }
     }
 
@@ -71,7 +76,7 @@ class MainActivity : AppCompatActivity() {
                     AppPreferences.token = response.accessToken
                     Log.e(TAG, "onActivityResult: Token: ${response.accessToken}")
 
-                    // waitForUserInfo()
+                    navigateMainFragment()
                 }
                 AuthorizationResponse.Type.ERROR -> {}
                 else -> {}

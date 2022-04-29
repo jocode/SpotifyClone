@@ -10,4 +10,9 @@
     <string name="your_library">Tu biblioteca</string>
     <string name="songs">Canciones</string>
     <string name="artists">Artistas</string>
+    <string name="error_function_not_implemented">Funcionalidad no implementada</string>
+    <string name="create_account">CREAR CUENTA</string>
+    <string name="log_in">INICIAR SESION</string>
+    <string name="already_user">Ya tiene un usuario?</string>
+    <string name="welcome_description">Bienvenido \n Regístrese y obtenga música gratis en tu teléfono, \n tableta y computador.</string>
 </resources>
