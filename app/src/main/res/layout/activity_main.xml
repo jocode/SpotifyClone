@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:background="@color/black"
     tools:context=".presentation.ui.MainActivity">
 
     <androidx.fragment.app.FragmentContainerView
@@ -24,10 +25,9 @@
         style="@style/bottomNavigationView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/black_translucent"
+        android:background="@android:color/transparent"
         android:clipToPadding="true"
         android:paddingVertical="7dp"
-        app:elevation="0dp"
         app:itemIconTint="@color/gray"
         app:itemTextColor="@color/gray"
         app:layout_constraintBottom_toBottomOf="parent"

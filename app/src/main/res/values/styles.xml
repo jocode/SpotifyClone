@@ -9,4 +9,9 @@
     <style name="bottomNavigationView.TextAppearance" parent="TextAppearance.MaterialComponents.Caption">
         <item name="android:textSize">15sp</item>
     </style>
+
+    <style name="MyText" parent="@android:style/TextAppearance">
+        <item name="android:textColor">#ffffffff</item>
+    </style>
+
 </resources>
