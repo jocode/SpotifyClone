@@ -6,9 +6,11 @@ import android.view.View
 import androidx.appcompat.widget.SearchView
 import androidx.core.view.isVisible
 import androidx.fragment.app.Fragment
-import androidx.fragment.app.viewModels
+import androidx.fragment.app.activityViewModels
 import androidx.recyclerview.widget.ConcatAdapter
 import com.crexative.spotifyclone.R
+import com.crexative.spotifyclone.core.hide
+import com.crexative.spotifyclone.core.visible
 import com.crexative.spotifyclone.data.models.search.Item
 import com.crexative.spotifyclone.data.models.search.ItemTrack
 import com.crexative.spotifyclone.databinding.FragmentSearchBinding
@@ -24,7 +26,7 @@ private val TAG: String = SearchFragment::class.java.simpleName
 class SearchFragment : Fragment(R.layout.fragment_search) {
 
     private lateinit var binding: FragmentSearchBinding
-    private val searchViewModel: SearchViewModel by viewModels()
+    private val searchViewModel: SearchViewModel by activityViewModels()
 
     private val tracksAdapter = TrackAdapter()
     private val artistAdapter = ArtistAdapter()
@@ -61,12 +63,18 @@ class SearchFragment : Fragment(R.layout.fragment_search) {
             artistAdapter.items = state.artists as List<Item>
 
             if (state.tracks.isNotEmpty()) {
+                imgSearch.hide()
                 val concatAdapter = ConcatAdapter()
                 concatAdapter.apply {
-                    addAdapter(0, SearchItemConcatAdapter("Cancionees", tracksAdapter))
-                    addAdapter(1, SearchItemConcatAdapter("Artistas", artistAdapter))
+                    addAdapter(0, SearchItemConcatAdapter(getString(R.string.songs), tracksAdapter))
+                    addAdapter(
+                        1,
+                        SearchItemConcatAdapter(getString(R.string.artists), artistAdapter)
+                    )
                 }
                 rvSearch.adapter = concatAdapter
+            } else {
+                imgSearch.visible()
             }
         }
 

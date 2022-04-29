@@ -5,9 +5,10 @@ import android.util.Log
 import android.view.View
 import androidx.core.view.isVisible
 import androidx.fragment.app.Fragment
-import androidx.fragment.app.viewModels
+import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.lifecycleScope
 import com.crexative.spotifyclone.R
+import com.crexative.spotifyclone.core.Utils.getGreeting
 import com.crexative.spotifyclone.databinding.FragmentHomeBinding
 import com.crexative.spotifyclone.presentation.ui.adapters.AlbumsAdapter
 import com.crexative.spotifyclone.presentation.viewmodels.AlbumsViewModel
@@ -21,7 +22,7 @@ private val TAG: String = HomeFragment::class.java.simpleName
 class HomeFragment : Fragment(R.layout.fragment_home) {
 
     private lateinit var binding: FragmentHomeBinding
-    private val albumsViewModel: AlbumsViewModel by viewModels()
+    private val albumsViewModel: AlbumsViewModel by activityViewModels()
     private lateinit var albumsAdapter: AlbumsAdapter
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -29,9 +30,14 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
 
         binding = FragmentHomeBinding.bind(view)
 
+        setupView()
         setupRecycler()
         setupAlbumObserver()
         observeUIEvent()
+    }
+
+    private fun setupView() = with(binding) {
+        tvGreetings.text = getGreeting()
     }
 
     private fun setupRecycler() = with(binding) {

@@ -6,5 +6,8 @@
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="greeting">Buenos días!</string>
     <string name="new_releases">Nuevos lanzamientos</string>
-    <string name="search_hint">Busca artistas o canciones</string>
+    <string name="search_hint">Busca canciones y artistas</string>
+    <string name="your_library">Tu biblioteca</string>
+    <string name="songs">Canciones</string>
+    <string name="artists">Artistas</string>
 </resources>
