@@ -41,11 +41,12 @@
         android:layout_marginTop="230dp"
         android:layout_marginEnd="34dp"
         android:gravity="center"
-        android:text="Welcome \n Sign up free music on your phone, tablet \n and computer."
+        android:text="@string/welcome_description"
         android:textColor="@color/white"
         android:textSize="13sp" />
 
     <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btnCreateAccount"
         android:layout_width="350dp"
         android:layout_height="50dp"
         android:layout_alignParentStart="true"
@@ -56,7 +57,7 @@
         android:layout_marginEnd="34dp"
         android:background="@drawable/oval_button"
         android:gravity="center"
-        android:text="CREATE ACCOUNT"
+        android:text="@string/create_account"
         android:textColor="@color/black"
         android:textSize="15sp"
         tools:ignore="OnClick" />
@@ -70,7 +71,7 @@
         android:layout_marginTop="420dp"
         android:layout_marginEnd="34dp"
         android:gravity="center"
-        android:text="Already a user?"
+        android:text="@string/already_user"
         android:textColor="@color/white"
         android:textSize="13sp" />
 
@@ -86,7 +87,7 @@
         android:background="@drawable/button_oval_white"
         android:gravity="center"
         android:onClick="onRequestTokenClicked"
-        android:text="LOG IN"
+        android:text="@string/log_in"
         android:textColor="@color/black"
         android:textSize="15sp"
         tools:ignore="OnClick" />

@@ -6,6 +6,7 @@ import androidx.fragment.app.Fragment
 import com.crexative.spotifyclone.R
 import com.crexative.spotifyclone.core.Constants
 import com.crexative.spotifyclone.databinding.FragmentLoginBinding
+import com.google.android.material.snackbar.Snackbar
 import com.spotify.sdk.android.auth.AuthorizationClient
 import com.spotify.sdk.android.auth.AuthorizationRequest
 import com.spotify.sdk.android.auth.AuthorizationResponse
@@ -20,12 +21,16 @@ class LoginFragment : Fragment(R.layout.fragment_login) {
 
         handleLoginClick()
 
-        onRequestTokenClicked()
+        // onRequestTokenClicked()
     }
 
     private fun handleLoginClick() {
         binding.btnLogin.setOnClickListener {
             onRequestTokenClicked()
+        }
+
+        binding.btnCreateAccount.setOnClickListener {
+            Snackbar.make(requireView(), getString(R.string.error_function_not_implemented), Snackbar.LENGTH_LONG).show()
         }
     }
 
