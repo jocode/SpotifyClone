@@ -2,6 +2,7 @@ package com.crexative.spotifyclone.di
 
 import com.crexative.spotifyclone.data.remote.AlbumApi
 import com.crexative.spotifyclone.data.remote.SearchApi
+import com.crexative.spotifyclone.data.remote.UserApi
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -17,4 +18,7 @@ object ApiModule {
 
     @Provides
     fun provideSearchApi(retrofit: Retrofit): SearchApi = retrofit.create(SearchApi::class.java)
+
+    @Provides
+    fun provideUserApi(retrofit: Retrofit): UserApi = retrofit.create(UserApi::class.java)
 }
