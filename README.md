@@ -3,6 +3,8 @@
 This is a clone of the Spotify app made with Android and Kotlin. The application use the Spotify API to get the data from the [Spotify API](https://developer.spotify.com/documentation/web-api/) and display it in a list, search for songs and artist and show the library of the user.
 The endpoints used is located in the [Web Api Reference](https://developer.spotify.com/documentation/web-api/reference/#).
 
+> :hammer: **Download the app from [Spotify Clone APK](https://github.com/jocode/SpotifyClone/blob/develop/apk/app-debug.apk?raw=true)**
+
 ## :star: Features
 
 - [x] Fetch new releases from Spotify
@@ -38,9 +40,7 @@ This application is developed using Kotlin and uses the following components:
 
 ### User guide
 - Use phones with Android API 21+
-- For delete post, you can use swipe right to delete on.
-- You can change the favorite status in the post detail.
-- For reload list you can done tap right-top corner or swipe down to refresh.
+- Sign in with a Spotify account
 
 ## :dart: Architecture
 
@@ -80,14 +80,13 @@ Each layer have your own models and the mappers are using extensions functions t
 
 - Hilt for dependency injection
 - Kotlin Coroutines
-- Kotlin Coroutines Test
 - Retrofit
 - Logging Interceptor
 - Gson
 - Room
 - LiveData
 - Navigation Component
-- Concat Adaoter
+- Concat Adapter
 
 All these dependencies are used following google guidelines for JetPack components, [Architecture Components](https://developer.android.com/jetpack/guide#recommended-app-arch) on Android. This allow us have a better integration between the dependencies.
 
