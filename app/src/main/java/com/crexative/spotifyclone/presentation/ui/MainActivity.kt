@@ -5,7 +5,6 @@ import android.os.Bundle
 import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.NavController
-import androidx.navigation.findNavController
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.setupWithNavController
 import com.crexative.spotifyclone.R
@@ -16,9 +15,11 @@ import com.crexative.spotifyclone.core.visible
 import com.crexative.spotifyclone.databinding.ActivityMainBinding
 import com.spotify.sdk.android.auth.AuthorizationClient
 import com.spotify.sdk.android.auth.AuthorizationResponse
+import dagger.hilt.android.AndroidEntryPoint
 
 private val TAG: String = MainActivity::class.java.simpleName
 
+@AndroidEntryPoint
 class MainActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMainBinding
@@ -41,7 +42,13 @@ class MainActivity : AppCompatActivity() {
 
     private fun setupMainScreen() {
         AppPreferences.token?.let {
-            navController.navigate(R.id.action_loginFragment_to_homeScreenFragment)
+            Log.e(TAG, "Token: $it")
+
+            try {
+                navController.navigate(R.id.action_loginFragment_to_homeScreenFragment)
+            } catch (e: Exception) {
+                e.printStackTrace()
+            }
         }
     }
 
