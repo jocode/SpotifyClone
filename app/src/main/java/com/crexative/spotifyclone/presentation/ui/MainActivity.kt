@@ -37,17 +37,9 @@ class MainActivity : AppCompatActivity() {
         navController = navHostFragment.navController
         binding.bottomNavigationView.setupWithNavController(navController)
 
-        setupMainScreen()
-        observeDestinationChange()
-    }
+        Log.e(TAG, "Token: ${AppPreferences.token}")
 
-    private fun setupMainScreen() {
-        AppPreferences.token?.let {
-            Log.e(TAG, "setupMainScreen: Token $it")
-            if (it.isNotEmpty()) {
-                navigateMainFragment()
-            }
-        }
+        observeDestinationChange()
     }
 
     private fun navigateMainFragment() {
@@ -79,8 +71,12 @@ class MainActivity : AppCompatActivity() {
 
                     navigateMainFragment()
                 }
-                AuthorizationResponse.Type.ERROR -> {}
-                else -> {}
+                AuthorizationResponse.Type.ERROR -> {
+                    Log.e(TAG, "onActivityResult: Error ${response.error}")
+                }
+                else -> {
+                    Log.e(TAG, "onActivityResult: ${response.code} ${response.error}")
+                }
             }
         }
     }
