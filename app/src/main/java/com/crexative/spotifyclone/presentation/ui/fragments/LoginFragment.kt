@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.View
 import androidx.fragment.app.Fragment
 import com.crexative.spotifyclone.R
+import com.crexative.spotifyclone.core.AppPreferences
 import com.crexative.spotifyclone.core.Constants
 import com.crexative.spotifyclone.databinding.FragmentLoginBinding
 import com.google.android.material.snackbar.Snackbar
@@ -21,7 +22,8 @@ class LoginFragment : Fragment(R.layout.fragment_login) {
 
         handleLoginClick()
 
-        // onRequestTokenClicked()
+        if (!AppPreferences.token.isNullOrEmpty())
+            onRequestTokenClicked()
     }
 
     private fun handleLoginClick() {
@@ -30,7 +32,11 @@ class LoginFragment : Fragment(R.layout.fragment_login) {
         }
 
         binding.btnCreateAccount.setOnClickListener {
-            Snackbar.make(requireView(), getString(R.string.error_function_not_implemented), Snackbar.LENGTH_LONG).show()
+            Snackbar.make(
+                requireView(),
+                getString(R.string.error_function_not_implemented),
+                Snackbar.LENGTH_LONG
+            ).show()
         }
     }
 
@@ -42,8 +48,5 @@ class LoginFragment : Fragment(R.layout.fragment_login) {
         builder.setScopes(arrayOf("streaming user-top-read"))
         val request = builder.build()
         AuthorizationClient.openLoginActivity(requireActivity(), Constants.REQUEST_CODE, request)
-
-        // TODO: Make Request to get Token
-        // findNavController().navigate(R.id.action_loginFragment_to_homeScreenFragment)
     }
 }
