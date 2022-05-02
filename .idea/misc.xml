@@ -5,18 +5,21 @@
       <map>
         <entry key="..\:/AndroidStudioProjects/SpotifyClone/app/src/main/res/drawable-v24/button_oval_white.xml" value="0.1645" />
         <entry key="..\:/AndroidStudioProjects/SpotifyClone/app/src/main/res/drawable-v24/oval_button.xml" value="0.1645" />
+        <entry key="..\:/AndroidStudioProjects/SpotifyClone/app/src/main/res/drawable/ic_music_note.xml" value="0.1515" />
         <entry key="..\:/AndroidStudioProjects/SpotifyClone/app/src/main/res/drawable/ic_spotify_logo.xml" value="0.1515" />
         <entry key="..\:/AndroidStudioProjects/SpotifyClone/app/src/main/res/drawable/search_bg.xml" value="0.1645" />
         <entry key="..\:/AndroidStudioProjects/SpotifyClone/app/src/main/res/drawable/splash_background.xml" value="0.1515" />
         <entry key="..\:/AndroidStudioProjects/SpotifyClone/app/src/main/res/drawable/splash_image.xml" value="0.1515" />
         <entry key="..\:/AndroidStudioProjects/SpotifyClone/app/src/main/res/layout/activity_main.xml" value="0.2604166666666667" />
         <entry key="..\:/AndroidStudioProjects/SpotifyClone/app/src/main/res/layout/album_item.xml" value="0.27447916666666666" />
+        <entry key="..\:/AndroidStudioProjects/SpotifyClone/app/src/main/res/layout/fragment_album_detail.xml" value="0.27447916666666666" />
         <entry key="..\:/AndroidStudioProjects/SpotifyClone/app/src/main/res/layout/fragment_home.xml" value="0.27447916666666666" />
         <entry key="..\:/AndroidStudioProjects/SpotifyClone/app/src/main/res/layout/fragment_library.xml" value="0.27447916666666666" />
         <entry key="..\:/AndroidStudioProjects/SpotifyClone/app/src/main/res/layout/fragment_login.xml" value="0.27447916666666666" />
         <entry key="..\:/AndroidStudioProjects/SpotifyClone/app/src/main/res/layout/fragment_search.xml" value="0.27447916666666666" />
         <entry key="..\:/AndroidStudioProjects/SpotifyClone/app/src/main/res/layout/playlist_item.xml" value="0.27447916666666666" />
         <entry key="..\:/AndroidStudioProjects/SpotifyClone/app/src/main/res/layout/search_item.xml" value="0.27447916666666666" />
+        <entry key="..\:/AndroidStudioProjects/SpotifyClone/app/src/main/res/layout/track_item.xml" value="0.27447916666666666" />
         <entry key="..\:/AndroidStudioProjects/SpotifyClone/app/src/main/res/menu/bottom_nav_menu.xml" value="0.27447916666666666" />
         <entry key="..\:/AndroidStudioProjects/SpotifyClone/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.1515" />
       </map>

@@ -14,4 +14,8 @@
     <color name="green">#1DB954</color>
     <color name="gray">#ACADA8</color>
     <color name="gray_strong">#2c2c2c</color>
+
+    <color name="one">#008000</color>
+    <color name="two">#8DB600</color>
+    <color name="three">#D0FF14</color>
 </resources>

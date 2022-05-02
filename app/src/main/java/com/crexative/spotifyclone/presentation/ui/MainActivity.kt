@@ -54,6 +54,7 @@ class MainActivity : AppCompatActivity() {
         navController.addOnDestinationChangedListener { _, destination, _ ->
             when (destination.id) {
                 R.id.loginFragment -> binding.bottomNavigationView.hide()
+                R.id.albumDetailFragment -> binding.bottomNavigationView.hide()
                 else -> binding.bottomNavigationView.visible()
             }
         }

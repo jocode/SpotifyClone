@@ -3,10 +3,12 @@ package com.crexative.spotifyclone.presentation.ui.fragments
 import android.os.Bundle
 import android.util.Log
 import android.view.View
+import androidx.core.os.bundleOf
 import androidx.core.view.isVisible
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.lifecycleScope
+import androidx.navigation.fragment.findNavController
 import com.crexative.spotifyclone.R
 import com.crexative.spotifyclone.core.Utils.getGreeting
 import com.crexative.spotifyclone.databinding.FragmentHomeBinding
@@ -49,6 +51,9 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
         albumsAdapter.setOnItemClickListener { item ->
             Log.e(TAG, "setupView: $item")
             // Navigate another screen
+            findNavController().navigate(R.id.action_homeScreenFragment_to_albumDetailFragment, bundleOf(
+                AlbumDetailFragment.ALBUM_ID to item.id
+            ))
         }
     }
 
