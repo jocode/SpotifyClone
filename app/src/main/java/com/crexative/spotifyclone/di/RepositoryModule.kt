@@ -2,9 +2,11 @@ package com.crexative.spotifyclone.di
 
 import com.crexative.spotifyclone.data.AlbumRepositoryImpl
 import com.crexative.spotifyclone.data.SearchRepositoryImpl
+import com.crexative.spotifyclone.data.TrackRepositoryImpl
 import com.crexative.spotifyclone.data.UserRepositoryImpl
 import com.crexative.spotifyclone.domain.repositories.AlbumRepository
 import com.crexative.spotifyclone.domain.repositories.SearchRepository
+import com.crexative.spotifyclone.domain.repositories.TrackRepository
 import com.crexative.spotifyclone.domain.repositories.UserRepository
 import dagger.Binds
 import dagger.Module
@@ -29,4 +31,9 @@ abstract class RepositoryModule {
     abstract fun bindUserRepository(
         userRepositoryImpl: UserRepositoryImpl
     ): UserRepository
+
+    @Binds
+    abstract fun bindTrackRepository(
+        trackRepositoryImpl: TrackRepositoryImpl
+    ): TrackRepository
 }

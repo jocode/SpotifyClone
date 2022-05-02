@@ -1,6 +1,7 @@
 package com.crexative.spotifyclone.data
 
 import com.crexative.spotifyclone.core.Resource
+import com.crexative.spotifyclone.data.models.albums.AlbumResponse
 import com.crexative.spotifyclone.data.models.albums.NewReleasesResponse
 import com.crexative.spotifyclone.data.remote.AlbumApi
 import com.crexative.spotifyclone.domain.repositories.AlbumRepository
@@ -19,7 +20,15 @@ class AlbumRepositoryImpl @Inject constructor(
             Resource.Error(message = "${e.message}")
         } catch (e: HttpException) {
             Resource.Error(message = e.message())
-        } catch (e : Exception) {
+        } catch (e: Exception) {
+            Resource.Error(message = "${e.message}")
+        }
+    }
+
+    override suspend fun getAlbum(id: String): Resource<AlbumResponse> {
+        return try {
+            Resource.Success(albumApi.getAlbum(id))
+        } catch (e: Exception) {
             Resource.Error(message = "${e.message}")
         }
     }

@@ -9,7 +9,12 @@
         android:id="@+id/homeScreenFragment"
         android:name="com.crexative.spotifyclone.presentation.ui.fragments.HomeFragment"
         android:label="fragment_home"
-        tools:layout="@layout/fragment_home" />
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_homeScreenFragment_to_albumDetailFragment"
+            app:destination="@id/albumDetailFragment"
+            app:popUpTo="@id/homeScreenFragment" />
+    </fragment>
     <fragment
         android:id="@+id/searchScreenFragment"
         android:name="com.crexative.spotifyclone.presentation.ui.fragments.SearchFragment"
@@ -31,4 +36,9 @@
             app:popUpTo="@id/loginFragment"
             app:popUpToInclusive="true" />
     </fragment>
+    <fragment
+        android:id="@+id/albumDetailFragment"
+        android:name="com.crexative.spotifyclone.presentation.ui.fragments.AlbumDetailFragment"
+        android:label="fragment_album_detail"
+        tools:layout="@layout/fragment_album_detail" />
 </navigation>
